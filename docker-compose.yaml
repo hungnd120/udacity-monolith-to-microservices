@@ -19,8 +19,6 @@ services:
       AWS_PROFILE: $AWS_PROFILE 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      S3_ACCESS_KEY: $S3_ACCESS_KEY
-      S3_SECRET_KEY: $S3_SECRET_KEY
       URL: "http://localhost:8100"
   backend-feed:
     image: udagram-api-feed
