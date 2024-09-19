@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Docker image reverse proxy
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/reverseproxy:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/reverseproxy:latest -f ./udagram-reverseproxy/Dockerfile .
 
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/reverseproxy:latest
