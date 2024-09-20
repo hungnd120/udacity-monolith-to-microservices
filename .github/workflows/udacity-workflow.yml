@@ -24,4 +24,22 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/reverseproxy:latest
 
+      - name: Build Docker image udagram-api-feed
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:latest -f ./udagram-api-feed/Dockerfile .
+
+      - name: Push Docker image to Docker Hub
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:latest
+
+      - name: Build Docker image udagram-api-user
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:latest -f ./udagram-api-user/Dockerfile .
+
+      - name: Push Docker image to Docker Hub
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:latest
+
+      - name: Build Docker image udagram-frontend
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:latest -f ./udagram-udagram-frontend/Dockerfile .
+
+      - name: Push Docker image to Docker Hub
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:latest
+
           
