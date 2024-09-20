@@ -8,14 +8,14 @@ RUN npm install -g @ionic/cli
 WORKDIR /usr/src/app
 ## Install app dependencies
 ## A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
+COPY ./udagram-frontend/package*.json ./
 
 
 RUN npm ci -f --legacy-peer-deps
 
 
 ## Bundle app source
-COPY . .
+COPY ./udagram-frontend .
 RUN ionic build
 ### Run 
 FROM nginx:alpine
